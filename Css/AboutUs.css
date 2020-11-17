@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+body {
+  font-family: "poppins", sans-serif;
+  background-color: rgb(252, 252, 252);
+}
+input,
+select textarea {
+  outline: none;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.Container {
+  max-width: 1440px;
+  margin: 0 auto;
+  /* padding: 0 10px;*/
+}
+.MainContainer {
+  position: relative;
+  min-height: 100vh;
+}
+/*NavBar---------------------------------------------------*/
+.NavBar {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.NavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ActiveNav {
+  border-bottom: 3px solid #21aaf6;
+  cursor: pointer;
+}
+.Logos {
+  position: relative;
+  text-align: center;
+  padding: 40px;
+}
+.Logos img {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+.MainBars {
+  display: none;
+  z-index: 1000;
+}
+.MainBars i {
+  font-size: 30px;
+  cursor: pointer;
+}
+nav ul {
+  position: relative;
+  display: flex;
+}
+nav ul li {
+  display: flex;
+}
+nav ul li a {
+  cursor: pointer;
+  color: black;
+  padding: 30px;
+}
+nav ul ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+nav ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li {
+  position: relative;
+  margin: 0px;
+  background-color: white;
+  display: list-item;
+  border-bottom: 1px solid#F7F7F8;
+  padding: 10px;
+}
+.MaskLogos {
+  display: none;
+}
+.navOverlay {
+  display: none;
+}
+
+/*history---------------------------------------------------*/
+.history {
+  margin-top: 100px;
+}
+.HistoryContainers {
+  display: flex;
+  align-items: center;
+  padding: 100px 10px;
+}
+.ImpactContainer {
+  display: flex;
+  align-items: center;
+  padding: 100px 10px;
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 1s ease-in-out;
+}
+.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.HistoryTitles {
+  text-align: center;
+  width: 40%;
+}
+.ActiveColor {
+  color: red;
+}
+.HistoryTitles i {
+  font-size: 30px;
+}
+.Text {
+  text-align: justify;
+  padding: 0px 20px;
+}
+.Business {
+  background-color: white;
+}
+.Impact {
+  background-color: white;
+}
+.HistoryBusiness {
+  display: flex;
+  align-items: center;
+  padding: 100px 10px;
+}
+
+/* Footer----------------------------------------------------*/
+footer {
+  background-color: #4a4b4b;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.FooterContainer {
+  padding: 30px 10px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+}
+.Followus i {
+  font-size: 25px;
+  cursor: pointer;
+}
+/* Animations-------------------------------------------*/
+
+@keyframes SlideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*Media queries for Mobles-----------------------------------*/
+
+/*NavBar---------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .MainBars {
+    display: block;
+    padding: 0px 20px;
+  }
+  .NavBar {
+    width: 100%;
+  }
+  nav {
+    width: 50%;
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    min-height: 100vh;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .MaskLogos {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+  }
+  .MaskLogos img {
+    width: 50%;
+  }
+  nav ul {
+    position: relative;
+    display: grid;
+  }
+  nav ul li {
+    border-bottom: 1px solid#F7F7F8;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li a {
+    padding: 20px 30px;
+  }
+
+  nav ul ul li {
+    border-top: 1px solid#F7F7F8;
+    border-bottom: 1px solid#F7F7F8;
+    padding: 0;
+    display: flex;
+    margin: 0;
+  }
+  nav ul ul li a {
+    margin: 0;
+    padding: 10px 60px;
+  }
+  nav ul ul {
+    top: 0;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  .navOverlay {
+    background-color: rgba(0, 0, 0, 0.01);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+  }
+  .ToggleSideMenus {
+    display: flex;
+  }
+  .ToggleSubMenus {
+    display: grid;
+  }
+  .HistoryContainers,
+  .HistoryBusiness {
+    flex-direction: column;
+  }
+  .ImpactContainer {
+    flex-direction: column;
+  }
+  .BioTitles,
+  .Address,
+  .Followus {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+  }
+  footer {
+    position: relative;
+  }
+  .FooterContainer {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  body {
+    font-size: 13px;
+  }
+  nav {
+    width: 80%;
+  }
+  /*Banners=========================================*/
+  .BannerTitles {
+    margin-bottom: 0px;
+  }
+  .BannerContainer {
+    text-align: center;
+  }
+  .FooterContainer {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .box i {
+    font-size: 25px;
+  }
+  .BioTitles,
+  .Address,
+  .Followus {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+  }
+}

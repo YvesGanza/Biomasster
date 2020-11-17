@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+body {
+  font-family: "poppins", sans-serif;
+  background-color: rgb(252, 252, 252);
+}
+input,
+select textarea {
+  outline: none;
+  font-family: "poppins", sans-serif;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.Container {
+  max-width: 1440px;
+  margin: 0 auto;
+  /* padding: 0 10px;*/
+}
+/*NavBar---------------------------------------------------*/
+.NavBar {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+.NavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid #f7f7f8;
+}
+.ActiveNav {
+  border-bottom: 3px solid #21aaf6;
+  cursor: pointer;
+}
+.Logos {
+  position: relative;
+  text-align: center;
+  padding: 40px;
+}
+.Logos img {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+nav a {
+  padding: 40px 10px;
+  color: #21aaf6;
+  cursor: pointer;
+  border-left: 1px solid #f7f7f8;
+}
+/*history---------------------------------------------------*/
+.SearcContainer {
+  padding: 0px 10px;
+}
+.Search {
+  padding-top: 110px;
+  padding-bottom: 40px;
+  background-color: #147ee2;
+}
+.searchbox {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.searchbox input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+  padding: 0px 15px;
+}
+.searchbox i {
+  padding: 15px;
+  background-color: #fc870c;
+  color: white;
+  cursor: pointer;
+}
+.Ttiles {
+  padding: 10px;
+  color: rgb(110, 110, 110);
+}
+.Jobs {
+  padding: 10px;
+}
+.JobsBox {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.JobsBox h3 {
+  color: #147ee2;
+  font-size: 15px;
+}
+.JobsBox p {
+  font-size: 13px;
+}
+/* Footer----------------------------------------------------*/
+footer {
+  position: absolute;
+  background-color: #4a4b4b;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.FooterContainer {
+  padding: 30px 10px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+}
+.Followus i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Animations-------------------------------------------*/
+
+/*Media queries for Mobles-----------------------------------*/
+
+/*NavBar---------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .MainBars {
+    display: block;
+    padding: 0px 20px;
+  }
+  footer {
+    position: relative;
+  }
+  .BioTitles,
+  .Address,
+  .Followus {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+  }
+  .FooterContainer {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .NavBar {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  body {
+    font-size: 13px;
+  }
+  /*Banners=========================================*/
+  .FooterContainer {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .BioTitles,
+  .Address,
+  .Followus {
+    border-bottom: 1px solid white;
+    padding: 10px 20px;
+  }
+  footer {
+    position: relative;
+  }
+}
+@media screen and (max-width: 375px) {
+}
