@@ -146,7 +146,7 @@ nav ul ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 50vh;
+  min-height: 60vh;
   color: white;
   padding: 0 110px;
   animation: SlideFromLeft 1s ease-in-out;
@@ -199,12 +199,12 @@ nav ul ul li {
 .videosBoxes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
   width: 100%;
   overflow: hidden;
 }
 .videosBoxes iframe {
   max-width: 100%;
+  padding: 10px;
 }
 .videosBoxes p {
   color: rgb(177, 177, 177);
@@ -289,6 +289,8 @@ footer {
 /*Media queries for Mobles-----------------------------------*/
 
 /*NavBar---------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+}
 @media screen and (max-width: 768px) {
   .MainBars {
     display: block;
@@ -380,7 +382,8 @@ footer {
   }
   .BoxPatners {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 13px;
   }
   .box i {
     font-size: 30px;
@@ -403,6 +406,9 @@ footer {
   }
   .videosBoxes {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .NavBar {
+    width: 100%;
   }
 }
 @media screen and (max-width: 425px) {
@@ -438,5 +444,10 @@ footer {
   .Followus {
     border-bottom: 1px solid white;
     padding: 10px 20px;
+  }
+  .BoxPatners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 12px;
   }
 }

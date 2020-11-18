@@ -108,64 +108,49 @@ nav ul ul li {
 
 /*history---------------------------------------------------*/
 .Team {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 130px;
-  justify-content: center;
 }
 .TeamContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px;
 }
-.grid {
-  width: 100%;
+.Cards {
   display: grid;
-  grid-template-columns: repeat(3, 20%);
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   gap: 10px;
-  justify-content: center;
 }
-.Profiles {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+.card {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 3px;
 }
-.profilePhotos {
-}
-.profilePhotos img {
-  border-radius: 10px;
-  filter: grayscale(0);
+.card img {
   width: 100%;
-  object-fit: cover;
+  display: block;
+  /*clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);*/
 }
-.Profiles:hover .profilePhotos img {
-  filter: grayscale(100%);
-}
-.ProfileConetnt {
+.infos {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-}
-.FontWeight {
-  font-weight: 700;
-  padding: 0px 5px;
+  flex-wrap: wrap;
 }
 .names {
   display: flex;
 }
-.Titles {
-  font-size: 13px;
+.InfoName .h2 {
+  font-weight: 700;
+  padding-left: 5px;
 }
-.socialIcons i {
-  color: #2688e3;
-  font-size: 30px;
+.titles p {
+  font-size: 12px;
 }
-
+.Icons i {
+  color: #147ee2;
+  font-size: 20px;
+  cursor: pointer;
+}
 /* Footer----------------------------------------------------*/
 footer {
   position: absolute;
@@ -207,10 +192,17 @@ footer {
 /*Media queries for Mobles-----------------------------------*/
 
 /*NavBar---------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+}
+
 @media screen and (max-width: 768px) {
   .MainBars {
     display: block;
     padding: 0px 20px;
+  }
+
+  .Team {
+    width: 100%;
   }
   .NavBar {
     width: 100%;
@@ -284,13 +276,6 @@ footer {
   .ToggleSubMenus {
     display: grid;
   }
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
-  }
-  .socialIcons i {
-    font-size: 20px;
-  }
   .Team {
     margin: 0px;
     padding: 0px;
@@ -312,6 +297,9 @@ footer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+  }
+  .NavBar {
+    width: 100%;
   }
 }
 @media screen and (max-width: 425px) {
@@ -349,12 +337,4 @@ footer {
   }
 }
 @media screen and (max-width: 375px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 10px;
-    gap: 60px;
-  }
-  .Profiles {
-    border-bottom: 1px solid rgb(231, 231, 231);
-  }
 }
