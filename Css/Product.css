@@ -109,9 +109,9 @@ nav ul ul li {
 
 /*history---------------------------------------------------*/
 .Product {
-  padding-top: 100px;
+  padding-top: 130px;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 150px;
 }
 .TabsContainer {
   display: grid;
@@ -140,6 +140,8 @@ nav ul ul li {
 .CustomerTabs {
   margin-top: 30px;
   padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 .StovesTabs {
 }
@@ -155,7 +157,6 @@ nav ul ul li {
 }
 
 .Titles {
-  margin-bottom: 20px;
 }
 .Titles h3 {
   color: #2688e3;
@@ -177,6 +178,10 @@ nav ul ul li {
 .message {
   padding: 10px;
   text-align: justify;
+}
+.messageBox h2 {
+  color: #2688e3;
+  margin-bottom: 20px;
 }
 .messageBox p:before {
   content: "\f10e";
@@ -331,6 +336,9 @@ footer {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+  }
+  .Product {
+    padding-bottom: 30px;
   }
 }
 @media screen and (max-width: 425px) {
