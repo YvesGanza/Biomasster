@@ -1,13 +1,12 @@
 // Variables===============================================
 let BarsMenus=document.querySelector('.fa-bars');
 let navOverlay=document.querySelector('.navOverlay');
-let AboutLink=document.querySelector('.AboutLink');
 
 
 // Add Event Listener======================================
 BarsMenus.addEventListener('click', ToggleSideMenus);
 navOverlay.addEventListener('click', HideSideMenus);
-AboutLink.addEventListener('click', TooggleSubmenus)
+
 
 // Functions=============================================
 
@@ -23,23 +22,23 @@ let navOverlay=document.querySelector('.navOverlay');
 SideBar.classList.remove('ToggleSideMenus');
 navOverlay.classList.remove('ToggleSideMenus');
 }
-function TooggleSubmenus(ev){
-    ev.preventDefault();
-    console.log('yes workins');
-    let Sub=document.querySelector('.SubMenus');
-    Sub.classList.toggle('ToggleSubMenus');
+/*function TooggleSubmenus(ev){
+            ev.preventDefault();
+            console.log('yes workins');
+            let Sub=document.querySelector('.SubMenus');
+            Sub.classList.toggle('ToggleSubMenus');
 
-}
-window.addEventListener('scroll', ()=>{
-    let content=document.querySelector('.PartnersCont');
-    let contentPosition=content.getBoundingClientRect().top;
-    let screenPosition=window.innerHeight/1.1;
-    if(contentPosition<screenPosition){
-        content.classList.add('active');
-    }else{
-        content.classList.remove('active');
-    }
-    });
+        }
+        window.addEventListener('scroll', ()=>{
+            let content=document.querySelector('.PartnersCont');
+            let contentPosition=content.getBoundingClientRect().top;
+            let screenPosition=window.innerHeight/1.1;
+            if(contentPosition<screenPosition){
+                content.classList.add('active');
+            }else{
+                content.classList.remove('active');
+            }
+    });*/
 
     // Videos =============================================================
     let output='';
@@ -55,3 +54,104 @@ fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIza
     });
     document.querySelector('.videosBoxes').innerHTML=output;
 });
+
+let currentItem=0;
+
+
+
+function PersonComment(CommentValue){
+    let CommentOut='';
+    fetch("json/Testimony.json")
+    .then((respo)=>respo.json())
+    .then((data)=>{
+        let item=data[CommentValue];
+        CommentOut+=`
+        <div class="profiles">
+                    <span>${item.FName} <span class="Bold">${item.Name}</span></span>
+                    <p>${item.Titles}</p>
+                </div>
+                <div class="message">
+                    <p><i class="fas fa-quote-left"></i>${item.Message}.<i class="fas fa-quote-right"></i></p>
+                </div>
+        `
+        document.querySelector('.TestContainer').innerHTML=CommentOut;
+     
+    });
+}
+PersonComment(currentItem);
+
+let btnComment=document.querySelectorAll('.btn button');
+btnComment.forEach((el)=>{
+    el.addEventListener('click', (ev)=>{
+        let CommentOut='';
+        let TarElement=ev.target;
+        if(TarElement.classList.contains('Prev')){
+            currentItem--;
+            fetch("json/Testimony.json")
+            .then((respo)=>respo.json())
+            .then((data)=>{
+                let item=data[currentItem];
+            if(currentItem < 0){
+                currentItem=data.length -1;
+                CommentOut+=`
+                <div class="profiles">
+                            <span>${item.FName} <span class="Bold">${item.Name}</span></span>
+                            <p>${item.Titles}</p>
+                        </div>
+                        <div class="message">
+                            <p><i class="fas fa-quote-left"></i>${item.Message}.<i class="fas fa-quote-right"></i></p>
+                        </div>
+                `
+                document.querySelector('.TestContainer').innerHTML=CommentOut;
+
+            }else{
+                CommentOut+=`
+                <div class="profiles">
+                            <span>${item.FName} <span class="Bold">${item.Name}</span></span>
+                            <p>${item.Titles}</p>
+                        </div>
+                        <div class="message">
+                            <p><i class="fas fa-quote-left"></i>${item.Message}.<i class="fas fa-quote-right"></i></p>
+                        </div>
+                `
+                document.querySelector('.TestContainer').innerHTML=CommentOut;
+            }
+        });
+        }
+        if(TarElement.classList.contains('Next'))
+        {
+           currentItem++;
+           fetch("json/Testimony.json")
+            .then((respo)=>respo.json())
+            .then((data)=>{
+                let item=data[currentItem];
+                if(currentItem > data.length -1){
+                    currentItem=0;
+                    CommentOut+=`
+                    <div class="profiles">
+                                <span>${item.FName} <span class="Bold">${item.Name}</span></span>
+                                <p>${item.Titles}</p>
+                            </div>
+                            <div class="message">
+                                <p><i class="fas fa-quote-left"></i>${item.Message}.<i class="fas fa-quote-right"></i></p>
+                            </div>
+                    `
+                    document.querySelector('.TestContainer').innerHTML=CommentOut;
+                }else{
+                    CommentOut+=`
+                    <div class="profiles">
+                                <span>${item.FName} <span class="Bold">${item.Name}</span></span>
+                                <p>${item.Titles}</p>
+                            </div>
+                            <div class="message">
+                                <p><i class="fas fa-quote-left"></i>${item.Message}.<i class="fas fa-quote-right"></i></p>
+                            </div>
+                    `
+                    document.querySelector('.TestContainer').innerHTML=CommentOut;
+                }
+               
+            })
+        }
+    
+    })
+})

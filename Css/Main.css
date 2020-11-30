@@ -7,6 +7,8 @@
 body {
   font-family: "poppins", sans-serif;
   background-color: rgb(252, 252, 252);
+  min-height: 100vh;
+  position: relative;
 }
 input,
 select textarea {
@@ -14,6 +16,7 @@ select textarea {
 }
 img {
   max-width: 100%;
+  display: block;
 }
 a {
   text-decoration: none;
@@ -26,85 +29,49 @@ li {
   margin: 0 auto;
   /* padding: 0 10px;*/
 }
-.MainContainer {
-  position: relative;
-}
+
 /*NavBar---------------------------------------------------*/
 .NavBar {
   background-color: white;
   position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
+  width: 100%;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 900;
 }
 .NavContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .ActiveNav {
-  border-bottom: 3px solid #21aaf6;
+  border-bottom: 5px solid #21abf6;
   cursor: pointer;
 }
-.Logos {
-  position: relative;
-  text-align: center;
-  padding: 40px;
+nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
-.Logos img {
+nav a {
+  padding: 30px 15px;
+  color: black;
+}
+.logos {
   position: absolute;
-  top: 0;
-  margin: 0;
+  display: flex;
+  width: 100px;
+  padding: 0px 20px;
+}
+.logos img {
+  object-fit: cover;
+  max-width: 100%;
+}
+.fa-bars {
+  font-size: 20px;
 }
 .MainBars {
   display: none;
-  z-index: 1000;
 }
-.MainBars i {
-  font-size: 30px;
-  cursor: pointer;
-}
-nav ul {
-  position: relative;
-  display: flex;
-}
-nav ul li {
-  display: flex;
-}
-nav ul li a {
-  cursor: pointer;
-  color: black;
-  padding: 30px;
-}
-nav ul ul {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 85px;
-  opacity: 0;
-  visibility: hidden;
-}
-nav ul li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-}
-nav ul ul li {
-  position: relative;
-  margin: 0px;
-  background-color: white;
-  display: list-item;
-  border-bottom: 1px solid#F7F7F8;
-  padding: 10px;
-}
-.MaskLogos {
-  display: none;
-}
-.navOverlay {
-  display: none;
-}
-
 /*Banner---------------------------------------------------*/
 .banner {
   width: 100%;
@@ -113,7 +80,7 @@ nav ul ul li {
   overflow: hidden;
 }
 .skews {
-  z-index: 900;
+  z-index: 800;
   position: absolute;
   top: 0;
   left: 0;
@@ -142,7 +109,7 @@ nav ul ul li {
 }
 .BannerContainer {
   position: absolute;
-  z-index: 900;
+  z-index: 700;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,16 +136,18 @@ nav ul ul li {
 }
 /* What we do----------------------------------------------------*/
 .TodContainer {
-  width: 60%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: justify;
+  padding: 100px 0px;
 }
 .TodContainer p {
   margin-bottom: 20px;
+}
+.ContentTodo {
+  text-align: center;
+  padding: 20px;
+}
+.ContImg {
+  overflow: hidden;
+  border-radius: 10px;
 }
 .More a {
   font-weight: 500;
@@ -186,6 +155,27 @@ nav ul ul li {
   color: white;
   padding: 10px;
   border-radius: 6px;
+}
+.BoxContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+.Boxes {
+  background-color: #2688e3;
+  padding: 20px;
+  color: white;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Boxes i {
+  font-size: 50px;
+  padding: 10px;
 }
 /* Biomassters Videos----------------------------------------------------*/
 .BiomassVideos {
@@ -198,7 +188,7 @@ nav ul ul li {
 }
 .videosBoxes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
   overflow: hidden;
 }
@@ -209,18 +199,8 @@ nav ul ul li {
 .videosBoxes p {
   color: rgb(177, 177, 177);
 }
-.PartnersCont {
-  padding: 10px 0px;
-  opacity: 0;
-  transform: scale(0.1);
-  transition: all 1s ease-in-out;
-}
-.active {
-  opacity: 1;
-  transform: scale(1);
-}
-.VideosTilres,
-.PartnersTilres {
+
+.VideosTilres {
   text-align: center;
   padding: 10px;
 }
@@ -229,13 +209,16 @@ nav ul ul li {
   font-weight: 500;
   padding: 0px 10px;
 }
-
-.PartnersCont {
-  position: relative;
-  display: grid;
-  grid-template-rows: 1fr 3fr;
+.Partners {
+  background-color: white;
 }
-
+.PartnersTilres {
+  text-align: center;
+  padding: 10px;
+}
+.PartnersCont {
+  padding: 50px 0px;
+}
 .BoxPatners {
   display: flex;
   justify-content: space-between;
@@ -248,7 +231,63 @@ nav ul ul li {
   font-size: 50px;
   color: rgb(71, 69, 69);
 }
-
+/* Customers Comments----------------------*/
+.TestimonyCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 20px;
+}
+.TestContainer {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+.message {
+  padding-bottom: 10px;
+}
+.message p {
+  line-height: 1.8;
+}
+.profiles {
+  padding-bottom: 20px;
+  text-align: left;
+}
+.profiles p {
+  font-size: 13px;
+}
+.profiles span {
+  font-size: 20px;
+}
+.Bold {
+  font-weight: 600;
+}
+.fa-quote-left,
+.fa-quote-right {
+  color: #21abf6;
+  padding: 0px 15px;
+}
+.btn {
+  color: #21abf6;
+}
+.btn button {
+  color: #21abf6;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.fa-chevron-left,
+.fa-chevron-right {
+  padding: 10px;
+  font-size: 25px;
+  pointer-events: none;
+}
 /* Footer----------------------------------------------------*/
 footer {
   background-color: #4a4b4b;
@@ -256,6 +295,7 @@ footer {
   right: 0;
   bottom: 0;
 }
+
 .FooterContainer {
   padding: 30px 10px;
   display: flex;
@@ -292,15 +332,18 @@ footer {
 @media screen and (max-width: 1024px) {
 }
 @media screen and (max-width: 768px) {
+  .NavContainer {
+    justify-content: space-between;
+  }
   .MainBars {
     display: block;
-    padding: 0px 20px;
+    padding: 30px;
   }
   .NavBar {
     width: 100%;
   }
   nav {
-    width: 50%;
+    width: 40%;
     position: absolute;
     background-color: white;
     top: 0;
@@ -309,47 +352,14 @@ footer {
     min-height: 100vh;
     display: none;
     flex-direction: column;
+    justify-content: flex-start;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    overflow: auto;
   }
-  .MaskLogos {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0px;
-  }
-  .MaskLogos img {
-    width: 50%;
-  }
-  nav ul {
-    position: relative;
-    display: grid;
-  }
-  nav ul li {
-    border-bottom: 1px solid#F7F7F8;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  nav ul li a {
-    padding: 20px 30px;
-  }
-
-  nav ul ul li {
-    border-top: 1px solid#F7F7F8;
-    border-bottom: 1px solid#F7F7F8;
-    padding: 0;
-    display: flex;
-    margin: 0;
-  }
-  nav ul ul li a {
-    margin: 0;
-    padding: 10px 60px;
-  }
-  nav ul ul {
-    top: 0;
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    display: none;
+  nav a {
+    padding: 8px 30px;
+    border-bottom: 1px solid rgb(233, 230, 230);
+    margin-top: 10px;
   }
   .navOverlay {
     background-color: rgba(0, 0, 0, 0.01);
@@ -361,6 +371,16 @@ footer {
     width: 100%;
     min-height: 100vh;
     display: none;
+  }
+  .masklogos {
+    height: 30%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .masklogos img {
+    max-width: 40%;
   }
   .ToggleSideMenus {
     display: flex;
@@ -410,6 +430,12 @@ footer {
   .NavBar {
     width: 100%;
   }
+  .TestContainer {
+    width: 100%;
+  }
+  .profiles span {
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 425px) {
   body {
@@ -447,7 +473,19 @@ footer {
   }
   .BoxPatners {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     font-size: 12px;
+  }
+  .box {
+    border-top: 1px solid white;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+  }
+  .NavBar {
+    width: 100%;
+  }
+  .TestContainer {
+    width: 100%;
+    padding: 5px;
+    margin-top: 20px;
   }
 }

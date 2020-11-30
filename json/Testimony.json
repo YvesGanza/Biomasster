@@ -1,22 +1,33 @@
 [
     { 
-        "Name":"Amani Ibrahim",
-        "Message":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
+        "Name":"Amani",
+        "FName":"Ibrahim",
+        "Titles":"Customer",
+        "Message":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
     },
     { 
-        "Name":"Ishimwe Clement",
-        "Message":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
+        "Name":"Yves",
+        "FName":"Shema",
+        "Titles":"Customer",
+        "Message":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
     },
     { 
-        "Name":"Lionel Messi",
-        "Message":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
+        "Name":"Naomi",
+        "FName":"Makena",
+        "Titles":"Co-founder Green Solurion",
+        "Message":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
     },
     { 
-        "Name":"Mr. Ibrahim Nicholas",
-        "Message":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
+        "Name":"Sandrine",
+        "FName":"Karenzi",
+        "Titles":"Customer",
+        "Message":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
     },
     { 
-        "Name":"Yves Shema Ganza",
-        "Message":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
+        "Name":"Pacifique",
+        "FName":"Ishimwe",
+        "Titles":"Director of REG",
+        "Message":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente assumenda ad beatae, a repellendus modi et fugiat quae at? Nesciunt consequuntur nostrum numquam obcaecati, quaerat ducimus labore modi tempore?"
     }
+    
 ]
