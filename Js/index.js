@@ -49,10 +49,11 @@ fetch("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIza
     VideosData.forEach(element => {
         let videos=element.snippet.resourceId.videoId
         output+=`
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/${videos}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div class="videosBoxes"><iframe width="560" height="315" src="https://www.youtube.com/embed/${videos}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         `
     });
-    document.querySelector('.videosBoxes').innerHTML=output;
+    document.querySelector('.VideosContainer').innerHTML=output;
 });
 
 let currentItem=0;

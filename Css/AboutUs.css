@@ -7,6 +7,9 @@
 body {
   font-family: "poppins", sans-serif;
   background-color: rgb(252, 252, 252);
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 160px;
 }
 input,
 select textarea {
@@ -14,6 +17,7 @@ select textarea {
 }
 img {
   max-width: 100%;
+  display: block;
 }
 a {
   text-decoration: none;
@@ -26,135 +30,93 @@ li {
   margin: 0 auto;
   /* padding: 0 10px;*/
 }
-.MainContainer {
-  position: relative;
-  min-height: 100vh;
-}
+
 /*NavBar---------------------------------------------------*/
 .NavBar {
   background-color: white;
   position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
+  width: 100%;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 900;
 }
 .NavContainer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .ActiveNav {
-  border-bottom: 3px solid #21aaf6;
+  border-bottom: 5px solid #21abf6;
   cursor: pointer;
 }
-.Logos {
-  position: relative;
-  text-align: center;
-  padding: 40px;
-}
-.Logos img {
-  position: absolute;
-  top: 0;
-  margin: 0;
-}
-.MainBars {
-  display: none;
-  z-index: 1000;
-}
-.MainBars i {
-  font-size: 30px;
-  cursor: pointer;
-}
-nav ul {
-  position: relative;
+nav {
   display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
-nav ul li {
-  display: flex;
-}
-nav ul li a {
-  cursor: pointer;
+nav a {
+  padding: 30px 15px;
   color: black;
-  padding: 30px;
 }
-nav ul ul {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 85px;
-  opacity: 0;
-  visibility: hidden;
-}
-nav ul li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-}
-nav ul ul li {
-  position: relative;
-  margin: 0px;
-  background-color: white;
-  display: list-item;
-  border-bottom: 1px solid#F7F7F8;
-  padding: 10px;
-}
-.MaskLogos {
-  display: none;
-}
+
 .navOverlay {
   display: none;
 }
-
-/*history---------------------------------------------------*/
-.history {
-  margin-top: 100px;
-}
-.HistoryContainers {
+.logos {
+  position: absolute;
   display: flex;
-  align-items: center;
-  padding: 100px 10px;
-}
-.ImpactContainer {
-  display: flex;
-  align-items: center;
-  padding: 100px 10px;
-  opacity: 0;
-  transform: scale(0.1);
-  transition: all 1s ease-in-out;
-}
-.active {
-  opacity: 1;
-  transform: scale(1);
-}
-.HistoryTitles {
-  text-align: center;
-  width: 40%;
-}
-.ActiveColor {
-  color: red;
-}
-.HistoryTitles i {
-  font-size: 30px;
-}
-.Text {
-  text-align: justify;
+  width: 100px;
   padding: 0px 20px;
 }
-.Business {
-  background-color: white;
+.logos img {
+  object-fit: cover;
+  max-width: 100%;
 }
-.Impact {
-  background-color: white;
+.fa-bars {
+  font-size: 20px;
 }
-.HistoryBusiness {
+.MainBars {
+  display: none;
+}
+/*Banneer---------------------------------------------------*/
+.Banner {
+  padding-top: 88px;
+}
+.AboutBanner {
+  background-image: url("../Image/BgAbout.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 50vh;
+  position: relative;
+}
+
+/* History container-------------------------------------------*/
+.History {
+  padding: 20px;
+}
+.HistoryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 5px;
+}
+.BoxHistory {
+  background-color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 100px 10px;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+.BoxHistory i {
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 /* Footer----------------------------------------------------*/
 footer {
+  position: absolute;
   background-color: #4a4b4b;
   left: 0;
   right: 0;
@@ -194,15 +156,18 @@ footer {
 
 /*NavBar---------------------------------------------------*/
 @media screen and (max-width: 768px) {
+  .NavContainer {
+    justify-content: space-between;
+  }
   .MainBars {
     display: block;
-    padding: 0px 20px;
+    padding: 30px;
   }
   .NavBar {
     width: 100%;
   }
   nav {
-    width: 50%;
+    width: 60%;
     position: absolute;
     background-color: white;
     top: 0;
@@ -211,47 +176,24 @@ footer {
     min-height: 100vh;
     display: none;
     flex-direction: column;
+    justify-content: flex-start;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    overflow: auto;
   }
-  .MaskLogos {
+  nav a {
+    padding: 8px 30px;
+    border-bottom: 1px solid rgb(233, 230, 230);
+    margin-top: 10px;
+  }
+  .masklogos {
+    height: 30%;
+    overflow: hidden;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 10px 0px;
   }
-  .MaskLogos img {
-    width: 50%;
-  }
-  nav ul {
-    position: relative;
-    display: grid;
-  }
-  nav ul li {
-    border-bottom: 1px solid#F7F7F8;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  nav ul li a {
-    padding: 20px 30px;
-  }
-
-  nav ul ul li {
-    border-top: 1px solid#F7F7F8;
-    border-bottom: 1px solid#F7F7F8;
-    padding: 0;
-    display: flex;
-    margin: 0;
-  }
-  nav ul ul li a {
-    margin: 0;
-    padding: 10px 60px;
-  }
-  nav ul ul {
-    top: 0;
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    display: none;
+  .masklogos img {
+    max-width: 40%;
   }
   .navOverlay {
     background-color: rgba(0, 0, 0, 0.01);
@@ -283,15 +225,23 @@ footer {
     border-bottom: 1px solid white;
     padding: 10px 20px;
   }
-  footer {
-    position: relative;
-  }
+
   .FooterContainer {
     width: 100%;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
+  }
+  body {
+    padding-bottom: 260px;
+  }
+  .HistoryContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .Banner {
+    padding-top: 85px;
+    color: white;
   }
 }
 @media screen and (max-width: 425px) {
@@ -300,6 +250,12 @@ footer {
   }
   nav {
     width: 80%;
+  }
+  .NavBar {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
   }
   /*Banners=========================================*/
   .BannerTitles {
@@ -323,5 +279,10 @@ footer {
   .Followus {
     border-bottom: 1px solid white;
     padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .HistoryContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

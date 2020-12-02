@@ -136,7 +136,7 @@ nav a {
 }
 /* What we do----------------------------------------------------*/
 .TodContainer {
-  padding: 100px 0px;
+  padding: 30px 0px;
 }
 .TodContainer p {
   margin-bottom: 20px;
@@ -159,7 +159,7 @@ nav a {
 .BoxContent {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
   justify-content: center;
 }
@@ -185,17 +185,21 @@ nav a {
   padding: 10px;
 }
 .VideosContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 5px;
+}
+iframe {
+  display: block;
+  width: 100%;
 }
 .videosBoxes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.videosBoxes iframe {
-  max-width: 100%;
-  padding: 10px;
-}
+
 .videosBoxes p {
   color: rgb(177, 177, 177);
 }
@@ -217,15 +221,19 @@ nav a {
   padding: 10px;
 }
 .PartnersCont {
-  padding: 50px 0px;
+  padding: 10px 0px;
 }
 .BoxPatners {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
 }
 .box {
   padding: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .box i {
   font-size: 50px;
@@ -400,14 +408,7 @@ footer {
   .TodContainer {
     width: 100%;
   }
-  .BoxPatners {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-size: 13px;
-  }
-  .box i {
-    font-size: 30px;
-  }
+
   .BioTitles,
   .Address,
   .Followus {
@@ -424,9 +425,6 @@ footer {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
-  .videosBoxes {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .NavBar {
     width: 100%;
   }
@@ -436,6 +434,21 @@ footer {
   .profiles span {
     font-size: 15px;
   }
+  .BoxContent {
+    gap: 10px;
+  }
+  .btn i {
+    font-size: 20px;
+  }
+  .message {
+    text-align: justify;
+  }
+  .BoxContent {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .VideosContainer {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 }
 @media screen and (max-width: 425px) {
   body {
@@ -444,10 +457,7 @@ footer {
   nav {
     width: 80%;
   }
-  .videosBoxes {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5px;
-  }
+
   /*Banners=========================================*/
   .BannerTitles {
     margin-bottom: 0px;
@@ -471,15 +481,10 @@ footer {
     border-bottom: 1px solid white;
     padding: 10px 20px;
   }
-  .BoxPatners {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    font-size: 12px;
-  }
   .box {
-    border-top: 1px solid white;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgb(204, 204, 204);
   }
+
   .NavBar {
     width: 100%;
   }
@@ -487,5 +492,8 @@ footer {
     width: 100%;
     padding: 5px;
     margin-top: 20px;
+  }
+  .BoxContent {
+    gap: 5px;
   }
 }
