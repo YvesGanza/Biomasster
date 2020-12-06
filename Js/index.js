@@ -1,7 +1,17 @@
 // Variables===============================================
 let BarsMenus=document.querySelector('.fa-bars');
 let navOverlay=document.querySelector('.navOverlay');
+let NavLink=document.querySelectorAll('.SideNav a');
 
+
+NavLink.forEach((el)=>{
+   el.addEventListener('click', ()=>{
+    let SideBar=document.querySelector('.SideNav');
+    let navOverlay=document.querySelector('.navOverlay');
+    SideBar.classList.toggle('ToggleSideMenus');
+    navOverlay.classList.toggle('ToggleSideMenus');
+   })
+})
 
 // Add Event Listener======================================
 BarsMenus.addEventListener('click', ToggleSideMenus);

@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 body {
   font-family: "poppins", sans-serif;
-  background-color: rgb(252, 252, 252);
   min-height: 100vh;
   position: relative;
 }
@@ -27,9 +26,35 @@ li {
 .Container {
   max-width: 1440px;
   margin: 0 auto;
-  /* padding: 0 10px;*/
+  padding: 0 10px;
 }
-
+.BoxeNews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding-bottom: 10px;
+  gap: 10px;
+}
+.BoxeNews a {
+  color: black;
+  background-color: white;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.btnAll {
+  display: flex;
+  justify-content: center;
+}
+.viewALL {
+  background-color: #007c9e;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+.BC {
+  padding: 20px;
+}
 /*NavBar---------------------------------------------------*/
 .NavBar {
   background-color: white;
@@ -72,122 +97,99 @@ nav a {
 .MainBars {
   display: none;
 }
-/*Banner---------------------------------------------------*/
+/* Banner ---------------------------------*/
 .banner {
-  width: 100%;
-  min-height: 60vh;
-  position: relative;
-  overflow: hidden;
-}
-.skews {
-  z-index: 800;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  transform-origin: top left;
-  transform: skewY(-2deg);
-}
-.banner::after {
-  position: absolute;
-  content: "";
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../Image/Back.jpg");
+  min-height: 100vh;
+  animation: animate 16s ease-in-out infinite;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform-origin: top left;
-  transform: skewY(-2deg);
+  background-attachment: fixed;
+  display: flex;
+  padding-bottom: 10px;
 }
+@keyframes animate {
+  0%,
+  100% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("../Image/Back.jpg");
+  }
+  25% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("../Image/BgAbout.jpg");
+  }
+  50% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("../Image/dady.jpg");
+  }
+  75% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+      url("../Image/BgAbout.jpg");
+  }
+}
+.banner h3 {
+  color: #fd880d;
+}
+
 .BannerContainer {
-  position: absolute;
-  z-index: 700;
+  width: 100%;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 60vh;
+  flex-wrap: wrap;
+}
+.BannerTitle {
+  padding-top: 80px;
   color: white;
-  padding: 0 110px;
-  animation: SlideFromLeft 1s ease-in-out;
+  flex-grow: 1;
 }
-.BannerTitles {
-  margin-bottom: 20px;
+.BannerTitle h3 {
+  font-size: 40px;
 }
-.BannerTitles p {
-  border-bottom: 1px solid white;
-}
-.btnMore {
-  margin-top: 20px;
-}
-.btnMore a {
-  font-weight: 500;
-  background-color: #2688e3;
-  color: white;
-  padding: 10px;
-  border-radius: 6px;
-}
-/* What we do----------------------------------------------------*/
-.TodContainer {
-  padding: 30px 0px;
-}
-.TodContainer p {
-  margin-bottom: 20px;
-}
-.ContentTodo {
-  text-align: center;
-  padding: 20px;
-}
-.ContImg {
-  overflow: hidden;
-  border-radius: 10px;
-}
-.More a {
-  font-weight: 500;
-  background-color: #2688e3;
-  color: white;
-  padding: 10px;
-  border-radius: 6px;
-}
-.BoxContent {
+.BannerBox {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
 }
 .Boxes {
-  background-color: #2688e3;
-  padding: 20px;
+  background-color: #2688e3b9;
   color: white;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
 }
 .Boxes i {
   font-size: 50px;
-  padding: 10px;
+  padding-bottom: 10px;
 }
-/* Biomassters Videos----------------------------------------------------*/
-.BiomassVideos {
-  background-color: white;
+
+/* About us--------------------------------------------*/
+.AboutUs {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding-top: 100px;
 }
-.BiomassVideosCont {
-  padding: 10px;
+.AboutUs h3 {
+  text-align: center;
+  color: #007c9e;
+  padding: 20px;
+}
+.AboutContent {
+  text-align: justify;
+}
+.VideosTilres span {
+  font-weight: 500;
+  padding: 0px 10px;
 }
 .VideosContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 5px;
 }
 iframe {
@@ -200,26 +202,64 @@ iframe {
   justify-content: center;
 }
 
-.videosBoxes p {
-  color: rgb(177, 177, 177);
+/* Team--------------------------------------------*/
+.ourTeam {
+  padding-top: 100px;
+}
+.ourTeam h3 {
+  color: #007c9e;
+  text-align: center;
+  padding: 20px;
+}
+.Cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 10px;
+  padding: 30px 40px;
 }
 
-.VideosTilres {
-  text-align: center;
-  padding: 10px;
+.card {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 3px;
 }
-.VideosTilres span,
+.card img {
+  width: 100%;
+  display: block;
+}
+.infos {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.names {
+  display: flex;
+}
+.InfoName .h2 {
+  font-weight: 700;
+  padding-left: 5px;
+}
+.titles p {
+  font-size: 12px;
+}
+.Icons i {
+  color: #147ee2;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* Partners----------------------------------------------------*/
+
+.PartnersTilres {
+  text-align: center;
+  padding: 20px;
+  color: #007c9e;
+}
 .PartnersTilres span {
   font-weight: 500;
   padding: 0px 10px;
 }
-.Partners {
-  background-color: white;
-}
-.PartnersTilres {
-  text-align: center;
-  padding: 10px;
-}
+
 .PartnersCont {
   padding: 10px 0px;
 }
@@ -239,16 +279,66 @@ iframe {
   font-size: 50px;
   color: rgb(71, 69, 69);
 }
-/* Customers Comments----------------------*/
-.TestimonyCont {
+/* Contact----------------------------------------------------*/
+.ContactUs {
+  background-color: #f9f9f9;
+}
+.Titles {
+  color: #007c9e;
+  text-align: center;
+  padding: 20px;
+}
+.Forms {
   display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.Forms input,
+textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #d6d6da;
+  border-radius: 5px;
+  font-family: "poppins", sans-serif;
+  outline: none;
+}
+.btncontact,
+.Titles {
+  display: flex;
+  justify-content: center;
+}
+.btncontact button {
+  font-family: "poppins", sans-serif;
+  outline: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #007c9e;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+}
+/* Footer----------------------------------------------------*/
+.News {
+  background-color: #f9f9f9;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+.News h3 {
+  padding: 20px;
+  color: #007c9e;
+  text-align: center;
+}
+.NEwsContainer {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 100px 20px;
+}
+.TestimonyCont {
+  width: 60%;
 }
 .TestContainer {
-  width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -260,13 +350,6 @@ iframe {
 }
 .message p {
   line-height: 1.8;
-}
-.profiles {
-  padding-bottom: 20px;
-  text-align: left;
-}
-.profiles p {
-  font-size: 13px;
 }
 .profiles span {
   font-size: 20px;
@@ -281,6 +364,8 @@ iframe {
 }
 .btn {
   color: #21abf6;
+  display: flex;
+  justify-content: center;
 }
 .btn button {
   color: #21abf6;
@@ -296,9 +381,14 @@ iframe {
   font-size: 25px;
   pointer-events: none;
 }
+.profiles p {
+  font-size: 13px;
+  padding-bottom: 30px;
+}
+
 /* Footer----------------------------------------------------*/
 footer {
-  background-color: #4a4b4b;
+  background-color: #007c9e;
   left: 0;
   right: 0;
   bottom: 0;
@@ -388,7 +478,7 @@ footer {
     justify-content: center;
   }
   .masklogos img {
-    max-width: 40%;
+    max-width: 20%;
   }
   .ToggleSideMenus {
     display: flex;
@@ -396,58 +486,37 @@ footer {
   .ToggleSubMenus {
     display: grid;
   }
-  /* Banner responsive================================*/
-  .BannerContainer {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  .TodContainer {
-    width: 100%;
-  }
 
+  .FooterContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-size: 14px;
+    padding: 0;
+  }
   .BioTitles,
   .Address,
   .Followus {
-    border-bottom: 1px solid white;
-    padding: 10px 20px;
-  }
-  footer {
-    position: relative;
-  }
-  .FooterContainer {
-    width: 100%;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
+    padding: 10px;
   }
   .NavBar {
     width: 100%;
   }
-  .TestContainer {
-    width: 100%;
-  }
-  .profiles span {
-    font-size: 15px;
-  }
-  .BoxContent {
-    gap: 10px;
-  }
-  .btn i {
-    font-size: 20px;
-  }
-  .message {
-    text-align: justify;
-  }
-  .BoxContent {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
   .VideosContainer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .TestimonyCont {
+    width: 100%;
+  }
+  .TestContainer {
+    text-align: justify;
+  }
+  .BannerTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 425px) {
@@ -455,45 +524,27 @@ footer {
     font-size: 13px;
   }
   nav {
-    width: 80%;
+    width: 60%;
   }
 
-  /*Banners=========================================*/
-  .BannerTitles {
-    margin-bottom: 0px;
-  }
-  .BannerContainer {
-    text-align: center;
-  }
+  /*====== Footer ======================*/
   .FooterContainer {
     width: 100%;
-    padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
-  }
-  .box i {
-    font-size: 25px;
-  }
-  .BioTitles,
-  .Address,
-  .Followus {
-    border-bottom: 1px solid white;
-    padding: 10px 20px;
-  }
-  .box {
-    border-top: 1px solid rgb(204, 204, 204);
+    font-size: 14px;
   }
 
   .NavBar {
     width: 100%;
   }
-  .TestContainer {
-    width: 100%;
-    padding: 5px;
-    margin-top: 20px;
+  .BioTitles,
+  .Address,
+  .Followus {
+    border-bottom: 1px solid white;
   }
-  .BoxContent {
-    gap: 5px;
+  .box {
+    border-top: 3px solid #f9f9f9;
   }
 }
