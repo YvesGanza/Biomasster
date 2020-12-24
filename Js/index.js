@@ -2,14 +2,35 @@
 let BarsMenus=document.querySelector('.fa-bars');
 let navOverlay=document.querySelector('.navOverlay');
 let NavLink=document.querySelectorAll('.SideNav a');
+//================================================
+let SectionHome=document.getElementById("banner");
+let SectionAbout=document.getElementById("AboutUs");
+let SectionTeam=document.getElementById("ourTeam");
+let SectionNews=document.getElementById("News");
+let SectionContactUs=document.getElementById("ContactUs");
+
+//=================================================
+let HomeSect=document.getElementById("HomeID");
+let AboutIDSect=document.getElementById("AboutID");
+let TeamIDSect=document.getElementById("TeamID");
+let NewsIDSect=document.getElementById("NewsID");
+let ContactIDSect=document.getElementById("ContactID");
+
+const SectionOneOption={};
 
 
 NavLink.forEach((el)=>{
-   el.addEventListener('click', ()=>{
+   el.addEventListener('click', (ev)=>{
+       let el=ev.target;
     let SideBar=document.querySelector('.SideNav');
     let navOverlay=document.querySelector('.navOverlay');
     SideBar.classList.toggle('ToggleSideMenus');
     navOverlay.classList.toggle('ToggleSideMenus');
+    let aLink=document.querySelectorAll('a');
+   aLink.forEach((ele)=>{
+       ele.classList.remove('ActiveNav');
+       ev.target.classList.add('ActiveNav');
+   })
    })
 })
 
@@ -19,6 +40,26 @@ navOverlay.addEventListener('click', HideSideMenus);
 
 
 // Functions=============================================
+//=================================================================
+const SectionHomeObserver=new IntersectionObserver(function(Entries, SectionHomeObserver){
+    Entries.forEach((Entry)=>{
+       if(!Entry.isIntersecting){
+            HomeSect.classList.remove('ActiveNav'); 
+       }else{
+        HomeSect.classList.add('ActiveNav'); 
+             AboutIDSect.classList.remove('ActiveNav'); 
+            TeamIDSect.classList.remove('ActiveNav'); 
+            NewsIDSect.classList.remove('ActiveNav'); 
+            ContactIDSect.classList.remove('ActiveNav'); 
+       }
+    })
+},SectionOneOption);
+SectionHomeObserver.observe(SectionHome);
+
+
+//=================================================================
+
+
 
 function ToggleSideMenus(){
 let SideBar=document.querySelector('.SideNav');

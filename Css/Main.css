@@ -4,6 +4,9 @@
   box-sizing: border-box;
   line-height: 1.6;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "poppins", sans-serif;
   min-height: 100vh;
@@ -71,6 +74,7 @@ li {
 .ActiveNav {
   border-bottom: 5px solid #21abf6;
   cursor: pointer;
+  color: #21abf6;
 }
 nav {
   display: flex;
@@ -79,7 +83,9 @@ nav {
 }
 nav a {
   padding: 30px 15px;
+  /*color: white;*/
   color: black;
+  font-weight: 500;
 }
 .logos {
   position: absolute;
@@ -100,60 +106,94 @@ nav a {
 /* Banner ---------------------------------*/
 .banner {
   min-height: 100vh;
-  animation: animate 16s ease-in-out infinite;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("../Image/Back.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
-  padding-bottom: 10px;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
 }
-@keyframes animate {
-  0%,
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      url("../Image/Back.jpg");
-  }
-  25% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      url("../Image/BgAbout.jpg");
-  }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      url("../Image/dady.jpg");
-  }
-  75% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-      url("../Image/BgAbout.jpg");
-  }
-}
+
 .banner h3 {
-  color: #fd880d;
+  color: #21abf6;
+  font-weight: 500;
 }
 
 .BannerContainer {
-  width: 100%;
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .BannerTitle {
-  padding-top: 80px;
   color: white;
   flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .BannerTitle h3 {
-  font-size: 40px;
+  font-size: 50px;
+}
+.BannerTitle p {
+  font-size: 22px;
+}
+
+.editorial {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* About us--------------------------------------------*/
+.AboutUs {
+  background-color: white;
+  min-height: 100vh;
+}
+.AboutBanners {
+  background-image: url("/Image/LandScape\ Montain.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 50vh;
+  padding-top: 100px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.AboutUs h3 {
+  text-align: center;
+  color: #007c9e;
+  padding: 20px;
+}
+.AboutContainer {
+  display: grid;
+}
+
+.AboutContent {
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  top: 50px;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
 .BannerBox {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
+  margin-top: 100px;
 }
 .Boxes {
-  background-color: #2688e3b9;
+  background-color: #2688e3;
   color: white;
   padding: 20px;
   display: flex;
@@ -167,21 +207,6 @@ nav a {
   font-size: 50px;
   padding-bottom: 10px;
 }
-
-/* About us--------------------------------------------*/
-.AboutUs {
-  background-color: #f9f9f9;
-  min-height: 100vh;
-  padding-top: 100px;
-}
-.AboutUs h3 {
-  text-align: center;
-  color: #007c9e;
-  padding: 20px;
-}
-.AboutContent {
-  text-align: justify;
-}
 .VideosTilres span {
   font-weight: 500;
   padding: 0px 10px;
@@ -189,8 +214,9 @@ nav a {
 .VideosContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /*grid-template-columns: repeat(2, 1fr);*/
+  gap: 40px;
 }
 iframe {
   display: block;
@@ -205,6 +231,7 @@ iframe {
 /* Team--------------------------------------------*/
 .ourTeam {
   padding-top: 100px;
+  background-color: #f9f9f9;
 }
 .ourTeam h3 {
   color: #007c9e;
@@ -249,7 +276,9 @@ iframe {
   cursor: pointer;
 }
 /* Partners----------------------------------------------------*/
-
+.Partners {
+  background-color: #f9f9f9;
+}
 .PartnersTilres {
   text-align: center;
   padding: 20px;
@@ -281,7 +310,9 @@ iframe {
 }
 /* Contact----------------------------------------------------*/
 .ContactUs {
-  background-color: #f9f9f9;
+  background-color: white;
+  min-height: 100vh;
+  padding-top: 100px;
 }
 .Titles {
   color: #007c9e;
@@ -320,10 +351,11 @@ textarea {
 }
 /* Footer----------------------------------------------------*/
 .News {
-  background-color: #f9f9f9;
+  background-color: white;
   padding-top: 100px;
   min-height: 100vh;
 }
+
 .News h3 {
   padding: 20px;
   color: #007c9e;
@@ -385,20 +417,68 @@ textarea {
   font-size: 13px;
   padding-bottom: 30px;
 }
-
+.newsletterTitles {
+  text-align: center;
+}
+.validate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.validate input {
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #d6d6da;
+  border-radius: 5px;
+  font-family: "poppins", sans-serif;
+  outline: none;
+  margin-bottom: 5px;
+}
+.validate button {
+  font-family: "poppins", sans-serif;
+  outline: none;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #007c9e;
+  border-radius: 5px;
+  font-weight: 500;
+  color: white;
+}
 /* Footer----------------------------------------------------*/
 footer {
-  background-color: #007c9e;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
-
+.FooterWave {
+  position: relative;
+  display: flex;
+}
+.FooterWave svg {
+  display: block;
+  width: 100%;
+}
+.footerContent {
+  background-color: #2d55aa;
+  padding-bottom: 20px;
+}
+.footerContent h3 {
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+.footerContent p,
+.footerContent i {
+  padding-left: 10px;
+  line-height: 1.9;
+}
 .FooterContainer {
-  padding: 30px 10px;
   display: flex;
   color: white;
-  align-items: center;
   justify-content: space-between;
 }
 .Followus i {
@@ -518,6 +598,9 @@ footer {
     flex-direction: column;
     justify-content: center;
   }
+  .validate input {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 425px) {
   body {
@@ -542,7 +625,7 @@ footer {
   .BioTitles,
   .Address,
   .Followus {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.123);
   }
   .box {
     border-top: 3px solid #f9f9f9;

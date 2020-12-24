@@ -18,12 +18,12 @@
                 <div class="masklogos">
                     <img src="Image/LogoBioMassters.svg" alt="">
                 </div>
-                <a href="#banner">Home</a>
-                <a href="#AboutUs">About us</a>
-                <a href="#ourTeam">Team</a>
+                <a href="#banner" class="ActiveNav" id="HomeID">Home</a>
+                <a href="#AboutUs" id="AboutID">About us</a>
+                <a href="#ourTeam" id="TeamID">Team</a>
                 <a href="">Service</a>
-                <a href="#News">News</a>
-                <a href="#ContactUs">Contact</a>
+                <a href="#News" id="NewsID">News</a>
+                <a href="#ContactUs" id="ContactID">Contact</a>
             </nav>
             <span></span>
             <div class="MainBars"><i class="fas fa-bars"></i></div>
@@ -31,11 +31,40 @@
     </div><!--Nav Bar Containers-->
 <!-------------------------Banner---------------------------------->
 <section class="banner" id='banner'>
-    <div class="Container BannerContainer">
+    <div class="Container BannerContainer"> 
         <div class="BannerTitle">
-            <h3>BioMasssters</h3>
+            <h3>BioMassters</h3>
             <p>Learn What Makes Us Great For Customers, And The Planet</p>
         </div>
+
+    </div>
+    <div class="svgwave">
+        <svg class="editorial" viewbox="0 24 150 28" preserveaspectratio="none">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"fill-opacity="0.5"/>
+            </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" fill-opacity="0.5"/>
+                    <use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1"fill-opacity="0.5"/>
+                    <use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa"fill-opacity="0.5"/>
+                </g>
+        </svg>
+    </div>
+</section>
+<!-------------------------About Us---------------------------------->
+<section class="AboutUs" id="AboutUs">
+    <div class="AboutBanners">
+       <div class="Container">
+            <div class="AboutContent">
+                <h3>About Us</h3>
+            <p>BioMassters Ltd. is a wood pellet clean cooking company operating in Rwanda that places customer
+                centricity at the heart of its operations while tackling 7 SDGs at the same time. It runs an innovative business
+                model, based on PAYGO principles, to make sure the majority of the urban Rwandan population can access
+                its services: a tier 4 gasifier stove and wood pellets as everyday cooking fuel.</p>
+            </div>
+       </div>
+    </div>
+    <div class="Container AboutContainer">
         <div class="BannerBox">
             <div class="Boxes">
                 <i class="far fa-clock"></i>
@@ -58,22 +87,13 @@
             
         </div>
     </div>
-</section>
-<!-------------------------About Us---------------------------------->
-<section class="AboutUs" id="AboutUs">
-    <h3>About Us</h3>
-    <div class="Container AboutContainer">
-        <div class="AboutContent">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod, mollitia. Odio, officiis perspiciatis beatae ex pariatur quis autem, nihil, aut voluptatem quas est molestiae esse eveniet cum similique! Quidem, vitae. Praesentium, veritatis maxime. Ipsa magni nam at dolorum, similique natus incidunt quasi quas mollitia animi magnam nostrum veniam optio explicabo pariatur suscipit omnis aut odio tempora saepe! Incidunt ratione in dolore iure quidem minus esse impedit magnam laboriosam dignissimos minima, dolorum at reprehenderit distinctio cupiditate nulla porro, dolor error fugit quam ipsa explicabo aut magni? Aspernatur, error consequatur necessitatibus eligendi dignissimos odio odit maiores? Neque aliquid autem modi possimus atque?</p>
-        </div>
-    </div>
-    <div class="Container BiomassVideosCont">
-        <div class="VideosTilres">
+   <div class="Container BiomassVideosCont">
+         <!--<div class="VideosTilres">
             <h3>BioMassters<span>Videos</span></h3>
         </div>
         <div class="VideosContainer">
             
-        </div>
+        </div>-->
     </div>
 
 </section>
@@ -86,12 +106,11 @@
                 <img src="Image/Jan.jpg" alt="" srcset="">
                 <div class="infos">
                     <div class="InfoName">
-                        <div class="names"><p>Jan</p><p class="h2">De Graaf</p></div>
+                        <div class="names"><p>Claude</p><p class="h2">Mansell</p></div>
                         <div class="titles"><p>Chief Directors</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/claudemansell/"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div><!--End Card-->
@@ -103,7 +122,6 @@
                         <div class="titles"><p>Chief Directors</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
                         <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
@@ -116,8 +134,7 @@
                         <div class="titles"><p>Chief Directors</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div><!--End Card-->
@@ -129,7 +146,6 @@
                         <div class="titles"><p>Chief Directors</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
                         <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
@@ -138,25 +154,47 @@
                 <img src="Image/Jan.jpg" alt="" srcset="">
                 <div class="infos">
                     <div class="InfoName">
-                        <div class="names"><p>Jan</p><p class="h2">De Graaf</p></div>
+                        <div class="names"><p>Innocent</p><p class="h2">Nsekeyukunze</p></div>
                         <div class="titles"><p>Chief Directors</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div><!--End Card-->
             <div class="card">
-                <img src="Image/Jan.jpg" alt="" srcset="">
+                <img src="Image/Fils.jpg" alt="" srcset="">
                 <div class="infos">
                     <div class="InfoName">
-                        <div class="names"><p>Jan</p><p class="h2">De Graaf</p></div>
-                        <div class="titles"><p>Chief Directors</p></div>
+                        <div class="names"><p>Fils </p><p class="h2">Usengimana</p></div>
+                        <div class="titles"><p>Technician</p></div>
                     </div>
                     <div class="Icons">
-                        <a href=""><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.linkedin.com/in/jan-de-graaf-b0b6bb49/"><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div><!--End Card-->
+            <div class="card">
+                <img src="Image/Issac.jpg" alt="" srcset="">
+                <div class="infos">
+                    <div class="InfoName">
+                        <div class="names"><p>Isaac</p><p class="h2">Harerimana</p></div>
+                        <div class="titles"><p>Operator</p></div>
+                    </div>
+                    <div class="Icons">
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div><!--End Card-->
+            <div class="card">
+                <img src="Image/Evariste.jpg" alt="" srcset="">
+                <div class="infos">
+                    <div class="InfoName">
+                        <div class="names"><p>Evariste</p><p class="h2">Dusengimana</p></div>
+                        <div class="titles"><p>Operator</p></div>
+                    </div>
+                    <div class="Icons">
+                        <a href=""><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div><!--End Card-->
@@ -167,7 +205,7 @@
 <!-------------------------News---------------------------------->
 <section class="News" id="News">
     <div class="containers NEwsContainer">
-        <h3>News & Testimonials</h3>
+        <h3>Testimonials</h3>
         <div class="TestimonyCont">
             <div class="TestContainer">
                 
@@ -179,7 +217,28 @@
         </div>
     </div>
     <div class="Container BC">
-        <div class="BoxeNews">
+        <div class="NewsLettersForm">
+            <div class="newsletterTitles">
+                <h3>Newsletter    SignUp</h3>
+                <p>Enter your infos to get our awesome newsletter</p>
+            </div>
+            <div id="mc_embed_signup">
+                <form action="https://biomassters.us7.list-manage.com/subscribe/post?u=301d5451dd69f5beaa43117ae&amp;id=727c93bd64" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate autocomplete="off">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email">
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="First name">
+                <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Last name">
+                <input type="text" value="" name="MMERGE3" class="" id="mce-MMERGE3" placeholder="organisations">
+                <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_301d5451dd69f5beaa43117ae_727c93bd64" tabindex="-1" value=""></div>
+                    <div class="clear"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">Subscribe</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--<div class="BoxeNews">
             <a href="" id="BoxTab">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, quo.</p>
                 <p>!2 Jan 2020</p>
@@ -197,7 +256,7 @@
                 <p>!2 Jan 2020</p>
             </a>
         </div>
-        <div class="btnAll"><a href="" class="viewALL">View All</a></div>
+        <div class="btnAll"><a href="" class="viewALL">View All</a></div>-->
     </div>
 </section>
 <!-------------------------Partners---------------------------------->
@@ -211,7 +270,7 @@
            <a href="https://www.reg.rw/about-us/subsidiaries/edcl/" class="box"> <img src="Image/Reg.png" alt="" srcset=""></a>
            <a href="https://www.fairclimatefund.nl/en?gclid=Cj0KCQiAzZL-BRDnARIsAPCJs72DUZ_DMjEN6YPvV3h7LYCss0-m_tJpe-ZYRuBf_ru_oLaQANApy8waAj3FEALw_wcB" class="box"> <img src="Image/Climate.svg" alt="" srcset=""></a>
            <a href="https://www.seal.rw/" class="box"> <img src="Image/Seal.png" alt="" srcset=""></a>
-           <a href="https://mimimoto.nl/" class="box"> <img src="Image/Mimi moto Logo.png" alt="" srcset=""></a>
+           <a href="https://mimimoto.nl/" class="box"> <img src="Image/Mimi moto Logo Edit.png" alt="" srcset=""></a>
            <!--<a href="" class="box"> <img src="Image/Reg.png" alt="" srcset=""></a>-->
         </div>
 
@@ -234,6 +293,21 @@
     </div>
 </section>
     <footer>
+        <div class="FooterWave">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 1920 170" style="enable-background:new 0 0 1920 170;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#2d55aa;}
+            </style>
+            <g>
+                <path class="st0" d="M0.1,21.3l64-3.5c64-3.8,192-10.4,320-10.6c128,0.2,256,6.8,384,17.7c128,10.4,256,25,384,31.9
+                    c128,7.1,256,7.1,384-3.5s256-31.9,320-42.5L1920,0v170h-64c-64,0-192,0-320,0s-256,0-384,0s-256,0-384,0s-256,0-384,0
+                    s-256,0-320,0h-64V21.3z"/>
+            </g>
+            </svg>
+
+        </div>
+        <div class="footerContent">
         <div class="Container FooterContainer">
             <div class="BioTitles">
                 <h3>BioMassters</h3>
@@ -242,7 +316,11 @@
             <div class="Address">
                 <h3>Address</h3>
                 <p>Rwanda</p>
+                <p>Rwezamenyo Sector</p>
+                <p>Rwezamenyo Cell</p>
+                <p>KN 2 AV 304 ST</p>
                 <p>Info@Biomassters.co</p>
+               
             </div>
             <div class="Followus">
                 <h3>Follow us</h3>
@@ -251,8 +329,10 @@
                 <i class="fab fa-linkedin"></i>
             </div>
         </div>
+        </div>
+       
     </footer><!--Footer Bar Containers-->
-
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
     <script src="Js/index.js"></script>
 </body>
 </html>
